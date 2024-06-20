@@ -7,7 +7,9 @@ function Button({ children, onClick, state, disable }) {
 			<button
 				disabled={disable}
 				className={`${base} ${
-					state ? 'dark:bg-orange-500 bg-blue-500 hover:bg-blue-600' : ''
+					state
+						? 'dark:bg-orange-500 bg-orange-600 text-orange-100  hover:bg-orange-600'
+						: ''
 				}`}
 				onClick={onClick}
 			>
