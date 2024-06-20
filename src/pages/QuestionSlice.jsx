@@ -3,12 +3,12 @@ import {
 	createAsyncThunk,
 	createSlice,
 } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 export const fetchQuiz = createAsyncThunk('questions/fetchQuiz', async () => {
-	const res = await axios.get(`http://localhost:8000/quizzes`);
-	const { data } = res;
-	return { data };
+	const res = await fetch(`../data.json`);
+	const { quizzes } = await res.json();
+
+	return { quizzes };
 });
 
 const initialState = {
@@ -92,7 +92,7 @@ const questionSlice = createSlice({
 			})
 			.addCase(fetchQuiz.fulfilled, (state, action) => {
 				state.status = 'ready';
-				state.questions = action.payload.data;
+				state.questions = action.payload.quizzes;
 			})
 			.addCase(fetchQuiz.rejected, (state, action) => {
 				state.error = action.error.message;
