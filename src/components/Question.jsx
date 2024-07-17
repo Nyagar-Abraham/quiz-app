@@ -18,7 +18,7 @@ function Question() {
 	return (
 		<div>
 			<div
-				className="text-center mt-6 rounded-md flex items-center justify-between 
+				className="text-center mt-6 rounded-md flex items-center max-xs:flex-col max-sm:gap-2 justify-between 
   "
 			>
 				<h2 className="font-semibold text-sm  text-start mr-l uppercase tracking-wide flex gap-2 px-2 dark:bg-slate-950 py-1 rounded-sm">

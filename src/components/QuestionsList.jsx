@@ -46,8 +46,8 @@ function QuestionsList() {
 						className={`w-3/4 py-2 px-3  bg-orange-400 dark:bg-slate-950 rounded-md text-sm dark:text-blue-100 hover:bg-orange-500  dark:hover:bg-slate-700 hover:translate-x-2 -hover:translate-y-1 transition-all ${
 							submit
 								? answer === option
-									? ' bg-blue-600 dark:bg-orange-500 cursor-not-allowed'
-									: 'dark:bg-blue-500 cursor-not-allowed bg-orange-500'
+									? ' !bg-blue-600 dark:!bg-orange-500 cursor-not-allowed'
+									: 'dark:!bg-blue-500 cursor-not-allowed !bg-orange-500'
 								: ''
 						} `}
 					>

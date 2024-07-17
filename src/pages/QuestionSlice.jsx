@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 
 export const fetchQuiz = createAsyncThunk('questions/fetchQuiz', async () => {
-	const res = await fetch(`../data.json`);
+	const res = await fetch(`/data.json`);
 	const { quizzes } = await res.json();
 
 	return { quizzes };
@@ -66,9 +66,7 @@ const questionSlice = createSlice({
 		previousQuestion(state) {
 			state.index -= 1;
 			state.isCorrect = null;
-			state.question = state.quiz.questions.find(
-				(question, i) => i === state.index
-			);
+			state.question = state.quiz.questions.find((_, i) => i === state.index);
 			const deductedPoints = state.scores.find((score, i) => i === state.index);
 			state.scores.splice(state.index, 1);
 			state.points -= deductedPoints;
